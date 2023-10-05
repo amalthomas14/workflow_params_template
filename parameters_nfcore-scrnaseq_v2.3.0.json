@@ -1,0 +1,15 @@
+{
+    "input": {"description": "Samplesheet (CSV file) with sample locations.",
+                "optional": false},
+    "protocol" : {"description": "10X Protocol used: 10XV1, 10XV2, 10XV3, dropseq",
+                "optional": false},
+    "aligner": {"description":
+            "choice of aligner: alevin, star, kallisto, cellranger, universc",
+            "optional": false},
+    "barcode_whitelist": {"description":
+            "Custom barcode whitelist if not using 10X Genomics",
+            "optional": true},
+    "gtf": {"description": "S3 path to GTF file", "optional": false},
+    "fasta": {"description": "S3 path to FASTA file", "optional": false},
+    "multiqc_title": {"description": "MultiQC report title", "optional": true}
+}
