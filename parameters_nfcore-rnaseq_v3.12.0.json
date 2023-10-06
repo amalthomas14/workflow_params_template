@@ -1,0 +1,16 @@
+{
+    "input": {"description": "Samplesheet (CSV file) with sample locations.",
+                "optional": false},
+    "outdir": {"description": "output directory", "optional": false},
+    "save_merged_fastq": {"description": "save merged fastqs in results dir: true, false", "optional": false},
+    "trimmer": {"description": "tools: trimgalore, fastp", "optional": false},
+    "aligner": {"description":
+            "choice of aligner: star_salmon, star_rsem, hisat2",
+            "optional": false},
+    "pseudo_aligner": {"description": "runs in addition to --aligner: salmon", "optional": true},
+    "genome": {"description": "name of iGenome reference", "optional": false},
+    "gtf": {"description": "S3 path to GTF file", "optional": false},
+    "fasta": {"description": "S3 path to genome FASTA file", "optional": false},
+    "transcript_fasta": {"description": "S3 path to transcript FASTA file", "optional": false},
+    "multiqc_title": {"description": "MultiQC report title", "optional": true}
+}
