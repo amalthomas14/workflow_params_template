@@ -12,5 +12,5 @@
     "transcript_fasta": {"description": "S3 path to transcript FASTA file", "optional": false},
     "gencode": {"description": "Specify if it is gencode GTF: true, false", "optional": true},
     "save_reference": {"description": "save STAR index to results directory: true, false", "optional": true},
-    "multiqc_title": {"description": "MultiQC report title", "optional": true},
+    "multiqc_title": {"description": "MultiQC report title", "optional": true}
 }
