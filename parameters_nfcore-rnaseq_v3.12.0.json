@@ -1,25 +1,54 @@
 {
     "input": {"description": "Samplesheet (CSV file) with sample locations.",
                 "optional": false},
-    "save_merged_fastq": {"description": "save merged fastqs in results dir: true, false", "optional": false},
-    "trimmer": {"description": "tools: trimgalore, fastp", "optional": false},
     "aligner": {"description":
             "choice of aligner: star_salmon, star_rsem, hisat2",
             "optional": false},
-    "pseudo_aligner": {"description": "runs in addition to --aligner: salmon", "optional": true},
+    "pseudo_aligner": {"description":
+            "runs in addition to --aligner: salmon",
+            "optional": true},
+    "trimmer": {"description": "tools: trimgalore, fastp", "optional": true},
+    "gtf": {"description": "S3 path to GTF file", "optional": false},
+    "gene_bed": {"description": "S3 path to BED file containing gene intervals",
+            "optional": true},
+    "fasta": {"description": "S3 path to genome FASTA file", "optional": false},
+    "transcript_fasta": {"description": "S3 path to transcript FASTA file",
+            "optional": false},
     "star_index": {"description": "S3 path to star index", "optional": true},
     "rsem_index": {"description": "S3 path to rsem index", "optional": true},
     "salmon_index": {"description": "S3 path to salmon index", "optional": true},
     "hisat2_index": {"description": "S3 path to hisat2 index", "optional": true},
-    "genome": {"description": "name of iGenome reference", "optional": false},
-    "gtf": {"description": "S3 path to GTF file", "optional": false},
-    "fasta": {"description": "S3 path to genome FASTA file", "optional": false},
-    "transcript_fasta": {"description": "S3 path to transcript FASTA file", "optional": false},
-    "additional_fasta": {"description": "S3 path to additional FASTA file", "optional": false},
-    "gencode": {"description": "Specify if it is gencode GTF: true, false", "optional": true},
-    "save_reference": {"description": "save STAR index to results directory: true, false", "optional": true},
+    "salmon_quant_libtype": {"description":
+     "override salmon inferred lib types: IU, ISR, ISF for paired-end, U, SR, SF for single-end",
+     "optional": true},
+    "skip_alignment": {"description":
+            "skip all alignment-based processes: true, false",
+            "optional": false},
+    "skip_pseudo_alignment": {"description":
+            "skip all psuedo-alignment-based processes: true, false",
+            "optional": true},
+    "skip_markduplicates": {"description":
+            "skip picard MarkDuplicates: true, false", "optional": true},
+    "skip_trimming": {"description":
+            "skip adapter trimming: true, false", "optional": true},
+    "skip_rseqc": {"description": "skip RSeQC: true, false", "optional": true},
+    "additional_fasta": {"description":
+            "S3 path to additional FASTA file: e.g. spike-in sequences",
+            "optional": true},
+    "genome": {"description": "name of iGenome reference", "optional": true},
+    "gencode": {"description": "Specify if it is gencode GTF: true, false",
+            "optional": true},
+    "gtf_group_features": {"description":
+            "attribute type to group features in the GTF when usingsalmon: gene_id, transcript_id",
+            "optional": true},
+    "save_trimmed": {"description": "save trimmed fastqs in results dir: true, false",
+            "optional": true},
+    "save_merged_fastq": {"description":
+            "save merged fastqs in results dir: true, false", "optional": true},
+    "save_reference": {"description":
+            "save aligner index to results directory: true, false",
+            "optional": true},
     "multiqc_title": {"description": "MultiQC report title", "optional": true},
-    "remove_ribo_rna": {"description": "remove reads from rRNA: true, false", "optional": true},
-    "skip_alignment": {"description": "skip all alignment-based processes: true, false", "optional": true},
-    "skip_pseudo_alignment": {"description": "skill all psuedo-alignment-based processes: true, false", "optional": true}
+    "remove_ribo_rna": {"description": "remove reads from rRNA: true, false",
+            "optional": true}
 }
