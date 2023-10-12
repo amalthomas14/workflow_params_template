@@ -13,7 +13,10 @@
             "optional": true},
     "fasta": {"description": "S3 path to genome FASTA file", "optional": false},
     "transcript_fasta": {"description": "S3 path to transcript FASTA file",
-            "optional": false},
+            "optional": true},
+    "additional_fasta": {"description":
+            "S3 path to additional FASTA file: e.g. spike-in sequences",
+            "optional": true},
     "star_index": {"description": "S3 path to star index", "optional": true},
     "rsem_index": {"description": "S3 path to rsem index", "optional": true},
     "salmon_index": {"description": "S3 path to salmon index", "optional": true},
@@ -32,9 +35,6 @@
     "skip_trimming": {"description":
             "skip adapter trimming: true, false", "optional": true},
     "skip_rseqc": {"description": "skip RSeQC: true, false", "optional": true},
-    "additional_fasta": {"description":
-            "S3 path to additional FASTA file: e.g. spike-in sequences",
-            "optional": true},
     "genome": {"description": "name of iGenome reference", "optional": true},
     "gencode": {"description": "Specify if it is gencode GTF: true, false",
             "optional": true},
