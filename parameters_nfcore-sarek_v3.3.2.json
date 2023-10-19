@@ -1,0 +1,69 @@
+{
+    "input": {"description": "Samplesheet (CSV file) with sample locations.",
+                "optional": false},
+    "step": {"description":
+            "starting step: mapping, markduplicates, prepare_recalibration, recalibrate, variant_calling, annotate",
+            "optional": false},
+    "split_fastq": {"description":
+            "Specify how many reads each split of a FastQ file contains. Set 0 to turn off splitting at all. default 5000000", "optional": true},
+    "wes": {"description":
+            "Enable when exome or panel data is provided: true, false",
+            "optional": true},
+    "intervals": {"description": "Path to target bed file in case of whole exome or targeted sequencing or intervals file.", "optional": true},
+    "nucleotides_per_second": {"description": "Estimate interval size. default 200000", "optional": true},
+    "no_intervals": {"description": "Disable usage of intervals: true, false",
+            "optional": true},
+    "tools": {"description": "Tools to use for duplicate marking, variant calling and/or for annotation.", "optional": true},
+    "skip_tools": {"description": "Disable specified tools.",
+            "optional": true},
+    "trim_fastq": {"description": "Run FastP for read trimming: true, false",
+            "optional": true},
+    "umi_read_structure": {"description":
+            "Specify UMI read structure",
+            "optional": true},
+    "aligner": {"description":
+            "Specify aligner to be used to map reads to reference genome.: bwa-mem, bwa-mem2, dragmap, sention-bwamem",
+            "optional": true},
+    "save_mapped": {"description":
+            "Save mapped files: true, false",
+            "optional": true},
+    "save_output_as_bam": {"description":
+            "Saves output from mapping (if --save_mapped), Markduplicates & Baserecalibration as BAM file instead of CRAM: true, false",
+            "optional": true},
+    "use_gatk_spark": {"description":
+            "Enable usage of GATK Spark implementation for duplicate marking and/or base quality score recalibration",
+            "optional": true},
+    "joint_germline": {"description":
+            "Turn on the joint germline variant calling for GATK haplotypecaller",
+            "optional": true},
+    "joint_mutect2": {"description":
+            "Runs Mutect2 in joint (multi-sample) mode for better concordance among variant calls of tumor samples from the same patient. Only a single normal sample per patient is allowed. Tumor-only mode is also supported.",
+            "optional": true},
+    "vep_cache": {"description":
+            "Path to VEP cache.",
+            "optional": true},
+    "snpeff_cache": {"description":
+            "Path to snpEff cache.",
+            "optional": true},
+    "fasta": {"description":
+            "",
+            "optional": true},
+    "fasta_fai": {"description":
+            "Path to FASTA reference index.",
+            "optional": true},
+    "save_reference": {"description":
+            "Save built references: true, false",
+            "optional": true},
+    "build_only_index": {"description":
+            "Only built references.",
+            "optional": true},
+    "download_cache": {"description":
+            "Download annotation cache.",
+            "optional": true},
+    "multiqc_title": {"description":
+            "MultiQC report title",
+            "optional": true},
+    "email": {"description":
+            "Email address for completion summary.",
+            "optional": true}
+}
