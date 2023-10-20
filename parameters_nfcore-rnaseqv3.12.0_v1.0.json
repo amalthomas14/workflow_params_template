@@ -47,7 +47,7 @@
     "skip_rseqc": {"description": "skip RSeQC: true, false", "optional": true},
     "genome": {"description": "name of iGenome reference", "optional": true},
     "gtf_group_features": {"description":
-            "attribute type to group features in the GTF when usingsalmon: gene_id, transcript_id",
+            "attribute type to group features in the GTF when using salmon: gene_id, transcript_id",
             "optional": true},
     "remove_ribo_rna": {"description": "remove reads from rRNA: true, false",
             "optional": true}
