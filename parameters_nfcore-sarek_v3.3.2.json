@@ -8,8 +8,9 @@
             "Enable when exome or panel data is provided: true, false",
             "optional": true},
     "tools": {"description": "Tools to use for duplicate marking, variant calling and/or for annotation.", "optional": true},
+    "genome": {"description": "Name of iGenomes reference. default GATK.GRCh38", "optional": true},
     "fasta": {"description":
-            "S3 Path to FASTA genome file.",
+            "S3 Path to FASTA genome file.Note: path to FASTA genome is mandatory if genome is not specified",
             "optional": true},
     "fasta_fai": {"description":
             "Path to FASTA reference index.",
