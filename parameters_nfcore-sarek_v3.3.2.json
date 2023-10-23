@@ -1,5 +1,5 @@
 {
-    "input": {"description": "Samplesheet (CSV file) with sample locations.",
+    "input": {"description": "Samplesheet (CSV file) with sample locations: path to CSV file, false",
                 "optional": false},
     "step": {"description":
             "starting step: mapping, markduplicates, prepare_recalibration, recalibrate, variant_calling, annotate",
@@ -7,16 +7,30 @@
     "wes": {"description":
             "Enable when exome or panel data is provided: true, false",
             "optional": true},
-    "tools": {"description": "Tools to use for duplicate marking, variant calling and/or for annotation.", "optional": true},
-    "genome": {"description": "Name of iGenomes reference. default GATK.GRCh38", "optional": true},
+    "intervals": { "description":
+            "Path to target bed file in case of whole exome or targeted sequencing or intervals file.",
+    "optional": true},
+    "no_intervals": {"description": "Disable usage of intervals: true, false",
+            "optional": true},
+    "split_fastq": {"description":
+            "Specify how many reads each split of a FastQ file contains. Set 0 to turn off splitting at all. default 5000000", "optional": true},
+    "tools": {"description": "Tools to use: Germline variant/Somatic Variant calling, Annotation. See docs for available options", "optional": true},
+    "skip_tools": {"description": "Disable specified tools. If DragMap is selected as aligner, it is recommended to skip baserecalibration with --skip_tools baserecalibrator",
+            "optional": true},
+    "genome": {"description":
+            "Name of iGenomes reference: GATK.GRCh38 (default), null",
+            "optional": true},
+    "igenomes_ignore": {"description":
+            "Do not load the iGenomes reference config: true, false",
+            "optional": true},
     "fasta": {"description":
-            "S3 Path to FASTA genome file.Note: path to FASTA genome is mandatory if genome is not specified",
+            "S3 Path to FASTA genome file. Note: path to FASTA genome is mandatory if genome is not specified",
             "optional": true},
     "fasta_fai": {"description":
             "Path to FASTA reference index.",
             "optional": true},
     "aligner": {"description":
-            "Specify aligner to be used to map reads to reference genome.: bwa-mem, bwa-mem2, dragmap, sention-bwamem",
+            "Specify aligner to be used to map reads to reference genome.: bwa-mem (default), bwa-mem2, dragmap, sentieon-bwamem",
             "optional": true},
     "save_mapped": {"description":
             "Save mapped files: true, false",
@@ -24,7 +38,15 @@
     "save_output_as_bam": {"description":
             "Saves output from mapping (if --save_mapped), Markduplicates & Baserecalibration as BAM file instead of CRAM: true, false",
             "optional": true},
+    "use_gatk_spark": {"description":
+            "Enable usage of GATK Spark implementation for duplicate marking and/or base quality score recalibration",
+            "optional": true},
+    "nucleotides_per_second": {"description":
+            "Estimate interval size. default 200000", "optional": true},
     "trim_fastq": {"description": "Run FastP for read trimming: true, false",
+            "optional": true},
+    "umi_read_structure": {"description":
+            "Specify UMI read structure",
             "optional": true},
     "vep_cache": {"description":
             "Path to VEP cache.",
@@ -32,37 +54,31 @@
     "snpeff_cache": {"description":
             "Path to snpEff cache.",
             "optional": true},
-    "split_fastq": {"description":
-            "Specify how many reads each split of a FastQ file contains. Set 0 to turn off splitting at all. default 5000000", "optional": true},
-    "intervals": {"description": "Path to target bed file in case of whole exome or targeted sequencing or intervals file.", "optional": true},
-    "nucleotides_per_second": {"description": "Estimate interval size. default 200000", "optional": true},
-    "no_intervals": {"description": "Disable usage of intervals: true, false",
-            "optional": true},
-    "skip_tools": {"description": "Disable specified tools.",
-            "optional": true},
-    "umi_read_structure": {"description":
-            "Specify UMI read structure",
-            "optional": true},
-    "use_gatk_spark": {"description":
-            "Enable usage of GATK Spark implementation for duplicate marking and/or base quality score recalibration",
-            "optional": true},
-    "joint_germline": {"description":
-            "Turn on the joint germline variant calling for GATK haplotypecaller",
-            "optional": true},
-    "joint_mutect2": {"description":
-            "Runs Mutect2 in joint (multi-sample) mode for better concordance among variant calls of tumor samples from the same patient. Only a single normal sample per patient is allowed. Tumor-only mode is also supported.",
-            "optional": true},
     "save_reference": {"description":
             "Save built references: true, false",
             "optional": true},
     "build_only_index": {"description":
-            "Only built references.",
+            "Only built references: true, false",
             "optional": true},
     "download_cache": {"description":
             "Download annotation cache.",
             "optional": true},
     "outdir_cache": {"description":
             "outdir cache.",
+            "optional": true},
+    "concatenate_vcfs": {"description":
+            "Option for concatenating germline vcf-files: true, false",
+            "optional": true},
+    "only_paired_variant_calling": {"description":
+            "If true, skips germline variant calling for matched normal to tumor sample. Normal samples without matched tumor will still be processed through germline variant calling tools: true,false",
+            "optional": true},
+    "joint_germline": {"description":
+            "Turn on the joint germline variant calling for GATK haplotypecaller: true, false",
+            "optional": true},
+    "joint_mutect2": {"description":
+            "Runs Mutect2 in joint (multi-sample) mode for better concordance among variant calls of tumor samples from the same patient. Only a single normal sample per patient is allowed. Tumor-only mode is also supported: true, false",
+            "optional": true},
+    "sentieon_haplotyper_emit_mode": {"description": "Option for selecting output and emit-mode of Sentieon's Haplotyper: all, confident, variant (default), gvcf",
             "optional": true},
     "multiqc_title": {"description":
             "MultiQC report title",
