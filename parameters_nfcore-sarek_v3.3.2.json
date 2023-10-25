@@ -1,36 +1,39 @@
 {
-    "input": {"description": "Samplesheet (CSV file) with sample locations: path to CSV file, false",
+    "input": {"description": "Samplesheet (CSV file) with sample locations: S3 path to CSV file or set false",
                 "optional": false},
     "step": {"description":
             "starting step: mapping, markduplicates, prepare_recalibration, recalibrate, variant_calling, annotate",
             "optional": false},
     "wes": {"description":
             "Enable when exome or panel data is provided: true, false",
+            "optional": false},
+    "tools": {"description": "Tools to use: Germline variant/Somatic Variant calling, Annotation. See docs for available options", "optional": false},
+    "skip_tools": {"description": "Disable specified tools. If DragMap is selected as aligner, it is recommended to skip baserecalibration with --skip_tools baserecalibrator",
             "optional": true},
+    "genome": {"description":
+            "Name of iGenomes reference: GATK.GRCh38 (default), null",
+            "optional": false},
+    "igenomes_base": {"description":
+            "S3 path for base for iGenomes references",
+            "optional": false},
+    "igenomes_ignore": {"description":
+            "Do not load the iGenomes reference config: true, false",
+            "optional": true},
+    "aligner": {"description":
+            "Specify aligner to be used to map reads to reference genome.: bwa-mem (default), bwa-mem2, dragmap, sentieon-bwamem",
+            "optional": false},
     "intervals": { "description":
-            "Path to target bed file in case of whole exome or targeted sequencing or intervals file.",
+            "S3 path to target bed file in case of whole exome or targeted sequencing or intervals file.",
     "optional": true},
     "no_intervals": {"description": "Disable usage of intervals: true, false",
             "optional": true},
     "split_fastq": {"description":
             "Specify how many reads each split of a FastQ file contains. Set 0 to turn off splitting at all. default 5000000", "optional": true},
-    "tools": {"description": "Tools to use: Germline variant/Somatic Variant calling, Annotation. See docs for available options", "optional": true},
-    "skip_tools": {"description": "Disable specified tools. If DragMap is selected as aligner, it is recommended to skip baserecalibration with --skip_tools baserecalibrator",
-            "optional": true},
-    "genome": {"description":
-            "Name of iGenomes reference: GATK.GRCh38 (default), null",
-            "optional": true},
-    "igenomes_ignore": {"description":
-            "Do not load the iGenomes reference config: true, false",
-            "optional": true},
     "fasta": {"description":
-            "S3 Path to FASTA genome file. Note: path to FASTA genome is mandatory if genome is not specified",
+            "S3 path to FASTA genome file. Note: path to FASTA genome is mandatory if genome is not specified",
             "optional": true},
     "fasta_fai": {"description":
-            "Path to FASTA reference index.",
-            "optional": true},
-    "aligner": {"description":
-            "Specify aligner to be used to map reads to reference genome.: bwa-mem (default), bwa-mem2, dragmap, sentieon-bwamem",
+            "S3 path to FASTA reference index.",
             "optional": true},
     "save_mapped": {"description":
             "Save mapped files: true, false",
@@ -49,11 +52,11 @@
             "Specify UMI read structure",
             "optional": true},
     "vep_cache": {"description":
-            "Path to VEP cache.",
-            "optional": true},
+            "S3 path to VEP cache.",
+            "optional": false},
     "snpeff_cache": {"description":
-            "Path to snpEff cache.",
-            "optional": true},
+            "S3 path to snpEff cache.",
+            "optional": false},
     "save_reference": {"description":
             "Save built references: true, false",
             "optional": true},
