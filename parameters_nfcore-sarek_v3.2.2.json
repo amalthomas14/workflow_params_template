@@ -49,23 +49,23 @@
             "Specify UMI read structure",
             "optional": true},
     "vep_genome": {"description":
-            "[required] VEP genome",
-            "optional": false},
+            "VEP genome",
+            "optional": true},
     "vep_species": {"description":
-            "[required] VEP species",
-            "optional": false},
+            "VEP species",
+            "optional": true},
     "vep_cache": {"description":
-            "[required] S3 path to VEP cache.",
-            "optional": false},
+            "S3 path to VEP cache.",
+            "optional": true},
     "vep_cache_version": {"description":
-            "[required] VEP cache version",
-            "optional": false},
+            "VEP cache version",
+            "optional": true},
     "snpeff_db": {"description":
-            "[required] snpEff db.",
-            "optional": false},
+            "snpEff db.",
+            "optional": true},
     "snpeff_genome": {"description":
-            "[required] snpEff genome.",
-            "optional": false},
+            "snpEff genome.",
+            "optional": true},
     "save_reference": {"description":
             "Save built references: true, false",
             "optional": true},
