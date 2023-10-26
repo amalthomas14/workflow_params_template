@@ -60,6 +60,9 @@
     "vep_cache_version": {"description":
             "VEP cache version",
             "optional": true},
+    "snpeff_cache": {"description":
+            "S3 snpEff snpeff cache",
+            "optional": true},
     "snpeff_db": {"description":
             "snpEff db.",
             "optional": true},
