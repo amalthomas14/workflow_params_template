@@ -1,0 +1,99 @@
+{
+    "input": {"description": "[required] Samplesheet (CSV file) with sample locations: S3 path to CSV file or set false",
+                "optional": false},
+    "step": {"description":
+            "[required] starting step: mapping (default), markduplicates, prepare_recalibration, recalibrate, variant_calling, annotate",
+            "optional": false},
+    "wes": {"description":
+            "[required] Enable when exome or panel data is provided: true, false",
+            "optional": false},
+    "tools": {"description": "[required] Tools to use: Germline variant/Somatic Variant calling, Annotation. See docs for available options", "optional": false},
+    "skip_tools": {"description": "Disable specified tools. If DragMap is selected as aligner, it is recommended to skip baserecalibration with --skip_tools baserecalibrator",
+            "optional": true},
+    "genome": {"description":
+            "[required] Name of iGenomes reference: GATK.GRCh38 (default), null",
+            "optional": false},
+    "igenomes_ignore": {"description":
+            "Do not load the iGenomes reference config: true, false",
+            "optional": true},
+    "aligner": {"description":
+            "[required] Specify aligner to be used to map reads to reference genome.: bwa-mem (default), bwa-mem2, dragmap",
+            "optional": false},
+    "intervals": { "description":
+            "S3 path to target bed file in case of whole exome or targeted sequencing or intervals file.",
+    "optional": true},
+    "no_intervals": {"description": "Disable usage of intervals: true, false",
+            "optional": true},
+    "split_fastq": {"description":
+            "Specify how many reads each split of a FastQ file contains. Set 0 to turn off splitting at all. default 5000000", "optional": true},
+    "fasta": {"description":
+            "S3 path to FASTA genome file. Note: path to FASTA genome is mandatory if genome is not specified",
+            "optional": true},
+    "fasta_fai": {"description":
+            "S3 path to FASTA reference index.",
+            "optional": true},
+    "save_mapped": {"description":
+            "Save mapped files: true, false",
+            "optional": true},
+    "save_output_as_bam": {"description":
+            "Saves output from mapping (if --save_mapped), Markduplicates & Baserecalibration as BAM file instead of CRAM: true, false",
+            "optional": true},
+    "use_gatk_spark": {"description":
+            "Enable usage of GATK Spark implementation for duplicate marking and/or base quality score recalibration",
+            "optional": true},
+    "nucleotides_per_second": {"description":
+            "Estimate interval size. default 200000", "optional": true},
+    "trim_fastq": {"description": "Run FastP for read trimming: true, false",
+            "optional": true},
+    "umi_read_structure": {"description":
+            "Specify UMI read structure",
+            "optional": true},
+    "vep_genome": {"description":
+            "VEP genome",
+            "optional": true},
+    "vep_species": {"description":
+            "VEP species",
+            "optional": true},
+    "vep_cache": {"description":
+            "S3 path to VEP cache.",
+            "optional": true},
+    "vep_cache_version": {"description":
+            "VEP cache version",
+            "optional": true},
+    "snpeff_cache": {"description":
+            "S3 snpEff snpeff cache",
+            "optional": true},
+    "snpeff_db": {"description":
+            "snpEff db.",
+            "optional": true},
+    "snpeff_genome": {"description":
+            "snpEff genome.",
+            "optional": true},
+    "save_reference": {"description":
+            "Save built references: true, false",
+            "optional": true},
+    "build_only_index": {"description":
+            "Only built references: true, false",
+            "optional": true},
+    "download_cache": {"description":
+            "Download annotation cache.",
+            "optional": true},
+    "outdir_cache": {"description":
+            "outdir cache.",
+            "optional": true},
+    "concatenate_vcfs": {"description":
+            "Option for concatenating germline vcf-files: true, false",
+            "optional": true},
+    "only_paired_variant_calling": {"description":
+            "If true, skips germline variant calling for matched normal to tumor sample. Normal samples without matched tumor will still be processed through germline variant calling tools: true,false",
+            "optional": true},
+    "joint_germline": {"description":
+            "Turn on the joint germline variant calling for GATK haplotypecaller: true, false",
+            "optional": true},
+    "multiqc_title": {"description":
+            "MultiQC report title",
+            "optional": true},
+    "email": {"description":
+            "Email address for completion summary.",
+            "optional": true}
+}
