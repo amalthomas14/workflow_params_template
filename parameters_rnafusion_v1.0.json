@@ -1,118 +1,50 @@
 {
     "input": {"description": "[required] Samplesheet (CSV file) with sample locations.",
                 "optional": false},
-    "aligner": {"description":
-            "[required] choice of aligner: star_salmon, star_rsem, hisat2",
-            "optional": false},
-    "pseudo_aligner": {"description":
-            "runs in addition to --aligner: salmon",
-            "optional": true},
-    "gtf": {"description": "[required] S3 path to GTF file", "optional": false},
-    "gene_bed": {"description": "S3 path to BED file containing gene intervals",
-            "optional": true},
-    "fasta": {"description": "[required] S3 path to genome FASTA file",
-            "optional": false},
-    "transcript_fasta": {"description": "S3 path to transcript FASTA file",
-            "optional": true},
-    "star_index": {"description": "S3 path to star index", "optional": true},
-    "rsem_index": {"description": "S3 path to rsem index", "optional": true},
-    "salmon_index": {"description": "S3 path to salmon index", "optional": true},
-    "hisat2_index": {"description": "S3 path to hisat2 index", "optional": true},
-    "hisat2_build_memory": {"description":
-            "Minimum memory required to use splice sites and exons in the HiSAT2 index build process. default 200 GB",
-            "optional": true},
-    "genome": {"description": "name of iGenome reference", "optional": true},
-    "gencode": {"description": "Specify if it is gencode GTF: true, false",
-            "optional": true},
-    "additional_fasta": {"description":
-            "S3 path to additional FASTA file: e.g. spike-in sequences",
-            "optional": true},
-    "gtf_extra_attributes": {"description":
-            "additional gene identifiers from the input GTF file when running Salmon. default gene_name",
-            "optional": true},
-    "gtf_group_features": {"description":
-            "Define the attribute type used to group features in the GTF file when running Salmon. default gene_id",
-            "optional": true},
-    "featurecounts_group_type": {"description":
-            "The attribute type used to group feature types in the GTF file when generating the biotype plot with featureCounts. default gene_biotype",
-            "optional": true},
-    "featurecounts_feature_type": {"description":
-            "By default, the pipeline assigns reads based on the 'exon' attribute within the GTF file. default exon",
-            "optional": true},
-    "trimmer": {"description": "tools: trimgalore, fastp", "optional": true},
-    "save_trimmed": {"description": "save trimmed fastqs in results dir: true, false",
-            "optional": true},
-    "skip_trimming": {"description":
-            "skip adapter trimming: true, false", "optional": true},
-    "extra_trimgalore_args": {"description":
-            "Extra arguments to pass to Trim Galore",
-            "optional": true},
-    "extra_fastp_args": {"description":
-            "Extra arguments to pass to fastp command",
-            "optional": true},
-    "min_trimmed_reads": {"description":
-            "Minimum number of trimmed reads below which samples are removed from further processing. default 1000",
-            "optional": true},
-    "star_ignore_sjdbgtf": {"description":
-            "When using pre-built STAR indices do not re-extract and use splice junctions from the GTF file: true, false",
-            "optional": true},
-    "salmon_quant_libtype": {"description":
-            "Override Salmon library type inferred based on strandedness defined in meta object.",
-            "optional": true},
-    "extra_star_align_args": {"description":
-            "Extra arguments to pass to STAR alignment command in addition to defaults defined by the pipeline.",
-            "optional": true},
-    "save_unaligned": {"description":
-            "Where possible, save unaligned reads from either STAR, HISAT2 or Salmon to the results directory: true, false",
-            "optional": true},
-    "rseqc_modules": {"description":
-            "Specify the RSeQC modules to run. default bam_stat,inner_distance",
-            "optional": true},
-    "deseq2_vst": {"description":
-            "Use vst transformation instead of rlog with DESeq2. default true: true, false",
-            "optional": true},
-    "skip_alignment": {"description":
-            "skip all alignment-based processes: true, false",
-            "optional": true},
-    "skip_pseudo_alignment": {"description":
-            "skip all psuedo-alignment-based processes: true, false",
-            "optional": true},
-    "skip_markduplicates": {"description":
-            "skip picard MarkDuplicates: true, false", "optional": true},
-    "skip_rseqc": {"description": "skip RSeQC: true, false", "optional": true},
-    "skip_bigwig": {"description":
-            "Skip bigWig file creation: true, false",
-            "optional": true},
-    "skip_preseq": {"description":
-            "skip preseq. default true: true, false",
-            "optional": true},
-    "skip_dupradar": {"description":
-            "skip dupradar: true, false",
-            "optional": true},
-    "skip_qualimap": {"description":
-            "skip qualimap: true, false",
-            "optional": true},
-    "skip_qc": {"description":
-            "skip all QC steps except for MultiQC: true, false",
-            "optional": true},
-    "skip_deseq2_qc": {"description":
-            "Skip DESeq2 PCA and heatmap plotting: true, false",
-            "optional": true},
-    "skip_multiqc": {"description":
-            "skip multiqc: true, false",
-            "optional": true},
-    "save_merged_fastq": {"description":
-            "save merged fastqs in results dir: true, false", "optional": true},
-    "save_reference": {"description":
-            "save aligner index to results directory: true, false",
-            "optional": true},
+    "skip_qc": {"description": "skip all QC steps: true, false", "optional": true},
+    "skip_vis": {"description": "skip visualization steps: true, false", "optional": true},
     "multiqc_title": {"description": "MultiQC report title", "optional": true},
-    "salmon_quant_libtype": {"description":
-     "override salmon inferred lib types: IU, ISR, ISF for paired-end, U, SR, SF for single-end",
-     "optional": true},
-    "gtf_group_features": {"description":
-            "attribute type to group features in the GTF when using salmon: gene_id, transcript_id",
-            "optional": true},
-    "remove_ribo_rna": {"description": "remove reads from rRNA: true, false",
-            "optional": true}
+    "build_references": {"description": "Specifies which analysis type for the pipeline - either build references or analyse data:true, false", "optional": true},
+    "genomes_base": {"description": "[required] S3 path to reference folder", "optional": false},
+    "ensembl_version": {"description": "ensembl version: 102", "optional": false},
+    "starfusion_build": {"description": "If set, starfusion references are built from scratch instead of downloaded: true, false", "optional": true},
+    "read_length": {"description": "read_length: default 100", "optional": true},
+    "all": {"description": "Build or run all references/analyses: true, false", "optional": true},
+    "arriba": {"description": "Build or run arriba references/analyses: true, false", "optional": true},
+    "arriba_ref": {"description": "S3 path to arriba references", "optional": true},
+    "arriba_ref_blacklist": {"description": "S3 path arriba reference blacklist", "optional": true},
+    "arriba_ref_protein_domain": {"description": "Path to arriba reference protein domain", "optional": true},
+    "arriba_fusions": {"description": "Path to arriba output", "optional": true},
+    "ensembl_ref": {"description": "Path to ensembl references", "optional": true},
+    "fusioncatcher": {"description": "Build or run fusioncatcher references/analyses: true, false", "optional": true},
+    "fusioncatcher_fusions": {"description": "Path to fusioncatcher output", "optional": true},
+    "fusioncatcher_limitSjdbInsertNsj": {"description": "Use limitSjdbInsertNsj with int for fusioncatcher", "optional": true},
+    "fusioncatcher_ref": {"description": "Path to fusioncatcher references", "optional": true},
+    "fusioninspector_filter": {"description": "Feed filtered fusionreport fusions to fusioninspector: true, false", "optional": true},
+    "fusioninspector_limitSjdbInsertNs": {"description": "Use limitSjdbInsertNsj with int for fusioninspector STAR process", "optional": true},
+    "fusioninspector_only": {"description": "Skip fusion-report. --fusioninspector_fusions PATH needed to provide a fusion list as input: true, false", "optional": true},
+    "fusioninspector_fusions": {"description": "Path to a fusion list file built with format GENE1--GENE2", "optional": true},
+    "fusionreport": {"description": "Build fusionreport references: true, false", "optional": true},
+    "fusionreport_ref": {"description": "Path to fusionreport references", "optional": true},
+    "pizzly": {"description": "Build or run pizzly references/analyses: true, false", "optional": true},
+    "pizzly_fusions": {"description": "Path to pizzly output", "optional": true},
+    "pizzly_ref": {"description": "Path to pizzly references", "optional": true},
+    "squid": {"description": "Build or run squid references/analyses: true, false", "optional": true},
+    "squid_fusions": {"description": "Path to squid output", "optional": true},
+    "squid_ref": {"description": "Path to squid ref", "optional": true},
+    "starfusion": {"description": "Build or run starfusion references/analyses: true, false", "optional": true},
+    "starfusion_fusions": {"description": "Path to starfusion output", "optional": true},
+    "starfusion_ref": {"description": "Path to starfusion ref", "optional": true},
+    "starindex": {"description": "Build or run starindex references/analyses: true, false", "optional": true},
+    "starindex_ref": {"description": "Path to starindex references", "optional": true},
+    "star_ignore_sjdbgtf": {"description": "Whether to ignore the GTF in STAR alignment: true, false", "optional": true},
+    "cosmic_username": {"description": "COSMIC username", "optional": true},
+    "cosmic_passwd": {"description": "COSMIC passwd", "optional": true},
+    "trim": {"description": "Preform trimming of reads, default: false", "optional": true},
+    "genome": {"description": "GRCh38", "optional": true},
+    "fasta": {"description": "Path to FASTA genome file.", "optional": true},
+    "gtf": {"description": "Path to GTF", "optional": true},
+    "chrgtf": {"description": "Path to GTF", "optional": true},
+    "transcript": {"description": "Path to GTF", "optional": true},
+    "refflat": {"description": "Path to GTF", "optional": true}
 }
