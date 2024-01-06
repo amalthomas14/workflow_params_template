@@ -1,0 +1,118 @@
+{
+    "build_references": {"description": "[required] Samplesheet (CSV file) with sample locations.",
+                "optional": false},
+    "aligner": {"description":
+            "[required] choice of aligner: star_salmon, star_rsem, hisat2",
+            "optional": false},
+    "pseudo_aligner": {"description":
+            "runs in addition to --aligner: salmon",
+            "optional": true},
+    "gtf": {"description": "[required] S3 path to GTF file", "optional": false},
+    "gene_bed": {"description": "S3 path to BED file containing gene intervals",
+            "optional": true},
+    "fasta": {"description": "[required] S3 path to genome FASTA file",
+            "optional": false},
+    "transcript_fasta": {"description": "S3 path to transcript FASTA file",
+            "optional": true},
+    "star_index": {"description": "S3 path to star index", "optional": true},
+    "rsem_index": {"description": "S3 path to rsem index", "optional": true},
+    "salmon_index": {"description": "S3 path to salmon index", "optional": true},
+    "hisat2_index": {"description": "S3 path to hisat2 index", "optional": true},
+    "hisat2_build_memory": {"description":
+            "Minimum memory required to use splice sites and exons in the HiSAT2 index build process. default 200 GB",
+            "optional": true},
+    "genome": {"description": "name of iGenome reference", "optional": true},
+    "gencode": {"description": "Specify if it is gencode GTF: true, false",
+            "optional": true},
+    "additional_fasta": {"description":
+            "S3 path to additional FASTA file: e.g. spike-in sequences",
+            "optional": true},
+    "gtf_extra_attributes": {"description":
+            "additional gene identifiers from the input GTF file when running Salmon. default gene_name",
+            "optional": true},
+    "gtf_group_features": {"description":
+            "Define the attribute type used to group features in the GTF file when running Salmon. default gene_id",
+            "optional": true},
+    "featurecounts_group_type": {"description":
+            "The attribute type used to group feature types in the GTF file when generating the biotype plot with featureCounts. default gene_biotype",
+            "optional": true},
+    "featurecounts_feature_type": {"description":
+            "By default, the pipeline assigns reads based on the 'exon' attribute within the GTF file. default exon",
+            "optional": true},
+    "trimmer": {"description": "tools: trimgalore, fastp", "optional": true},
+    "save_trimmed": {"description": "save trimmed fastqs in results dir: true, false",
+            "optional": true},
+    "skip_trimming": {"description":
+            "skip adapter trimming: true, false", "optional": true},
+    "extra_trimgalore_args": {"description":
+            "Extra arguments to pass to Trim Galore",
+            "optional": true},
+    "extra_fastp_args": {"description":
+            "Extra arguments to pass to fastp command",
+            "optional": true},
+    "min_trimmed_reads": {"description":
+            "Minimum number of trimmed reads below which samples are removed from further processing. default 1000",
+            "optional": true},
+    "star_ignore_sjdbgtf": {"description":
+            "When using pre-built STAR indices do not re-extract and use splice junctions from the GTF file: true, false",
+            "optional": true},
+    "salmon_quant_libtype": {"description":
+            "Override Salmon library type inferred based on strandedness defined in meta object.",
+            "optional": true},
+    "extra_star_align_args": {"description":
+            "Extra arguments to pass to STAR alignment command in addition to defaults defined by the pipeline.",
+            "optional": true},
+    "save_unaligned": {"description":
+            "Where possible, save unaligned reads from either STAR, HISAT2 or Salmon to the results directory: true, false",
+            "optional": true},
+    "rseqc_modules": {"description":
+            "Specify the RSeQC modules to run. default bam_stat,inner_distance",
+            "optional": true},
+    "deseq2_vst": {"description":
+            "Use vst transformation instead of rlog with DESeq2. default true: true, false",
+            "optional": true},
+    "skip_alignment": {"description":
+            "skip all alignment-based processes: true, false",
+            "optional": true},
+    "skip_pseudo_alignment": {"description":
+            "skip all psuedo-alignment-based processes: true, false",
+            "optional": true},
+    "skip_markduplicates": {"description":
+            "skip picard MarkDuplicates: true, false", "optional": true},
+    "skip_rseqc": {"description": "skip RSeQC: true, false", "optional": true},
+    "skip_bigwig": {"description":
+            "Skip bigWig file creation: true, false",
+            "optional": true},
+    "skip_preseq": {"description":
+            "skip preseq. default true: true, false",
+            "optional": true},
+    "skip_dupradar": {"description":
+            "skip dupradar: true, false",
+            "optional": true},
+    "skip_qualimap": {"description":
+            "skip qualimap: true, false",
+            "optional": true},
+    "skip_qc": {"description":
+            "skip all QC steps except for MultiQC: true, false",
+            "optional": true},
+    "skip_deseq2_qc": {"description":
+            "Skip DESeq2 PCA and heatmap plotting: true, false",
+            "optional": true},
+    "skip_multiqc": {"description":
+            "skip multiqc: true, false",
+            "optional": true},
+    "save_merged_fastq": {"description":
+            "save merged fastqs in results dir: true, false", "optional": true},
+    "save_reference": {"description":
+            "save aligner index to results directory: true, false",
+            "optional": true},
+    "multiqc_title": {"description": "MultiQC report title", "optional": true},
+    "salmon_quant_libtype": {"description":
+     "override salmon inferred lib types: IU, ISR, ISF for paired-end, U, SR, SF for single-end",
+     "optional": true},
+    "gtf_group_features": {"description":
+            "attribute type to group features in the GTF when using salmon: gene_id, transcript_id",
+            "optional": true},
+    "remove_ribo_rna": {"description": "remove reads from rRNA: true, false",
+            "optional": true}
+}
