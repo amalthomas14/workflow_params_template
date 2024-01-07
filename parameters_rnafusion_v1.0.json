@@ -5,7 +5,7 @@
     "skip_vis": {"description": "skip visualization steps: true, false", "optional": true},
     "multiqc_title": {"description": "MultiQC report title", "optional": true},
     "build_references": {"description": "Specifies which analysis type for the pipeline - either build references or analyse data:true, false", "optional": true},
-    "genomes_base": {"description": "[required] S3 path to reference folder", "optional": false},
+    "genomes_base": {"description": "S3 path to reference folder. Default is set to s3://cb-oncology/references/rnafusion_references", "optional": true},
     "ensembl_version": {"description": "ensembl version: 102", "optional": false},
     "starfusion_build": {"description": "If set, starfusion references are built from scratch instead of downloaded: true, false", "optional": true},
     "read_length": {"description": "read_length: default 100", "optional": true},
