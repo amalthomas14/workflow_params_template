@@ -1,0 +1,7 @@
+{
+    "input": {"description": "[required] Samplesheet (CSV file) with sample locations.",
+                "optional": false},
+    "starfusion_ref": {"description": "S3 Path to starfusion ref", "optional": false},
+    "starindex_ref": {"description": "S3 Path to starindex references", "optional": false},
+    "gtf": {"description": "S3 Path to GTF", "optional": false}
+}
