@@ -3,6 +3,5 @@
                 "optional": false},
     "genome": {"description": "GRCh38", "optional": true},
     "species": {"description": "species name: homo_sapiens", "optional": true},
-    "fasta": {"description": "", "optional": true},
-    "genome": {"description": "", "optional": true}
+    "fasta": {"description": "S3 genome fasta path", "optional": true}
 }
