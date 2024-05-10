@@ -1,0 +1,8 @@
+{
+    "input": {"description": "[required] Samplesheet (CSV file) with sample locations.",
+                "optional": false},
+    "genome": {"description": "GRCh38, GRCh37", "optional": false},
+    "species": {"description": "species name: homo_sapiens", "optional": true},
+    "skip_multiqc": {"description": "skip multiqc", "optional": true},
+    "multiqc_title": {"description": "multiqc title", "optional": true}
+}
