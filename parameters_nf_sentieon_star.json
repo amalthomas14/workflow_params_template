@@ -1,0 +1,6 @@
+{
+    "input": {"description": "[required] Samplesheet (CSV file) with sample locations.",
+                "optional": false},
+    "gtf": {"description": "[required] S3 gtf path", "optional": false},
+    "star_index": {"description": "[required] S3 star index path", "optional": false}
+}
