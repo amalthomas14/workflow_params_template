@@ -109,6 +109,10 @@
     "skip_multiqc": {"description":
             "skip multiqc: true, false",
             "optional": true},
+    "skip_genecollapse": {"description":
+            "skip gene collapse: true, false",
+            "optional": true},
+    "collapse_action_file": {"description": "S3 path for Gene collapse action file", "optional": true},
     "save_merged_fastq": {"description":
             "save merged fastqs in results dir: true, false", "optional": true},
     "save_reference": {"description":
