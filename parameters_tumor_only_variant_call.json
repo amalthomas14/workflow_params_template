@@ -1,0 +1,14 @@
+{
+    "input": {"description": "[required] Samplesheet (CSV file) with sample locations.",
+                "optional": false},
+    "genome_fasta": {"description": "S3 path for genome fasta", "optional": false},
+    "genome_fasta_fai": {"description": "S3 path for genome fasta fai", "optional": false},
+    "genome_fasta_dict": {"description": "S3 path for genome fasta dict", "optional": false},
+    "germline_gnomad": {"description": "S3 path for germline_gnomad ", "optional": false},
+    "germline_gnomad_tbi": {"description": "S3 path for germline_gnomad tbi", "optional": false},
+    "interval_list": {"description": "S3 path for interval list", "optional": false},
+    "pon": {"description": "S3 path for pon", "optional": false},
+    "pon_tbi": {"description": "S3 path for pon tbi", "optional": false},
+    "outdir_vcfs": {"description": "S3 path for output vcfs", "optional": true},
+    "outdir_qc": {"description": "S3 path for output intermediate qc files", "optional": true}
+}
