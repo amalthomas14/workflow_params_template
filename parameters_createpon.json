@@ -1,0 +1,8 @@
+{
+    "input": {"description": "[required] Samplesheet (CSV file) with sample locations.",
+                "optional": false},
+    "tools": {"description": "species name: homo_sapiens", "optional": false},
+    "genome": {"description": "GRCh38", "optional": true},
+    "fasta": {"description": "S3 genome fasta path", "optional": true},
+    "fai": {"description": "S3 genome fasta fai path", "optional": true}
+}
