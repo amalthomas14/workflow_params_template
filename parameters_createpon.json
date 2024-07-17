@@ -1,8 +1,11 @@
 {
     "input": {"description": "[required] Samplesheet (CSV file) with sample locations.",
                 "optional": false},
-    "tools": {"description": "species name: homo_sapiens", "optional": false},
-    "genome": {"description": "GRCh38", "optional": true},
-    "fasta": {"description": "S3 genome fasta path", "optional": true},
-    "fai": {"description": "S3 genome fasta fai path", "optional": true}
+    "genome_fasta": {"description": "S3 genome fasta path", "optional": true},
+    "genome_fasta_fai": {"description": "S3 genome fasta fai path", "optional": true},
+    "genome_fasta_dict": {"description": "S3 genome fasta dict", "optional": true},
+    "interval_list": {"description": "S3 genome fasta fai path", "optional": true},
+    "germline_resource": {"description": "S3 genome fasta fai path", "optional": true},
+    "germline_resource_tbi": {"description": "S3 genome fasta fai path", "optional": true},
+    "mutect2_pon_name": {"description": "S3 genome fasta fai path", "optional": true}
 }
