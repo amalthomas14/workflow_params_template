@@ -1,0 +1,17 @@
+{
+    "input": {"description": "S3 path to samplesheet (CSV file) with sample locations.",
+                "optional": false},
+    "aligner": {"description":
+            "choice of aligner: star_salmon, star_rsem, hisat2",
+            "optional": false},
+    "pseudo_aligner": {"description": "runs in addition to --aligner: salmon", "optional": true},
+    "fasta": {"description": "S3 path to genome FASTA file", "optional": false},
+    "gtf": {"description": "S3 path to GTF file", "optional": false},
+    "transcript_fasta": {"description": "S3 path to transcript FASTA file", "optional": true},
+    "gencode": {"description": "Specify if it is gencode GTF: true, false", "optional": true},
+    "save_reference": {"description": "save STAR index to results directory: true, false", "optional": true},
+    "skip_psuedo_alignment": {"description": "skip psuedo alignment:true, false", "optional": true},
+    "skip_alignment": {"description": "skip alignment:true, false", "optional": true},
+    "skip_qc": {"description": "skip QC stepst:true, false", "optional": true},
+    "additional_fasta": {"description": "S3 path to FASTA file to concatenate to genome FASTA file e.g. containing spike-in sequences", "optional": true}
+}
