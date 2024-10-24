@@ -1,0 +1,5 @@
+{
+    "input": {"description": "[required] Samplesheet (CSV file) with logR,CNS locations.",
+                "optional": false},
+    "genome": {"description": "GRCh38", "optional": true}
+}
