@@ -105,6 +105,16 @@
             "skip gene collapse: true, false",
             "optional": true},
     "collapse_action_file": {"description": "S3 path for Gene collapse action file", "optional": true},
+    "skip_oncosignature_ssgsea": {"description":
+            "skip oncosignature based ssgsea: true, false",
+            "optional": true},
+    "ssgsea_sample_annotation": {"description": "S3 path for CSV sample annotation for ssGSEA", "optional": true},
+    "onco_hallmark_file": {"description": "S3 path for xlsx CBEA oncology hallmark file", "optional": true},
+    "onco_immune_file": {"description": "S3 path for xlsx CBEA oncology immune file", "optional": true},
+    "calc_gene_exp_stats": {"description":
+            "calculate QC metrics based on gene expression matrix: true, false",
+            "optional": true},
+    "geneinfo_file": {"description": "S3 path for TSV gene information file", "optional": true},
     "save_merged_fastq": {"description":
             "save merged fastqs in results dir: true, false", "optional": true},
     "save_reference": {"description":
