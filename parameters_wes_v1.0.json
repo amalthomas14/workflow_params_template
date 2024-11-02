@@ -61,6 +61,7 @@
     "pon_tbi_custom": {"description": "s3 path for PON tbi", "optional": true},
     "filter_mutect2_beta": {"description": "mutect2 beta value for filtering. default: true", "optional": true},
     "ascat_use_wesref": {"description": "Use wes reference for ASCAT. default: true", "optional": true},
+    "run_gistic": {"description": "perform gistic analysis for ASCAT, CNVKIT. default: false", "optional": true},
     "vep_genome": {"description":
             "VEP genome",
             "optional": true},
