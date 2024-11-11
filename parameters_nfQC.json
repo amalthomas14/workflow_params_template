@@ -1,4 +1,5 @@
 {
     "input": {"description": "[required] Samplesheet (CSV file) with sample locations.",
-                "optional": false}
+                "optional": false},
+    "ffpe_maxforks": {"description": "max forks", "optional": true}
 }
