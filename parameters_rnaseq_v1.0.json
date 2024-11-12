@@ -119,6 +119,12 @@
     "ssgsea_sample_annotation": {"description": "S3 path for CSV sample annotation for ssGSEA", "optional": true},
     "onco_hallmark_file": {"description": "S3 path for xlsx CBEA oncology hallmark file", "optional": true},
     "onco_immune_file": {"description": "S3 path for xlsx CBEA oncology immune file", "optional": true},
+    "calc_ffpe_artifact": {"description":
+            "calculate FFPE A/T enrichment artifact: true, false",
+            "optional": true},
+    "calc_ffpe_maxforks": {"description":
+            "Maximum number of parallel process to calculate FFPE A/T enrichment artifact: 20",
+            "optional": true},
     "calc_gene_exp_stats": {"description":
             "calculate QC metrics based on gene expression matrix: true, false",
             "optional": true},
