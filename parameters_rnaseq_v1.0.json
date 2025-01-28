@@ -119,6 +119,14 @@
     "ssgsea_sample_annotation": {"description": "S3 path for CSV sample annotation for ssGSEA", "optional": true},
     "onco_hallmark_file": {"description": "S3 path for xlsx CBEA oncology hallmark file", "optional": true},
     "onco_immune_file": {"description": "S3 path for xlsx CBEA oncology immune file", "optional": true},
+    "skip_rnaseqc": {"description":
+            "skip rnaseqc module: true, false",
+            "optional": false},
+    "rnaseqc_stranded": {"description":
+            "use collapsed stranded GTF for rnaseqc module: true, false",
+            "optional": false},
+    "rnaseqc_gtf_stranded": {"description": "S3 path for GTF stranded collapsed file", "optional": true},
+    "rnaseqc_gtf_unstranded": {"description": "S3 path for GTF unstranded collapsed file", "optional": true},
     "calc_ffpe_artifact": {"description":
             "calculate FFPE A/T enrichment artifact: true, false",
             "optional": true},
