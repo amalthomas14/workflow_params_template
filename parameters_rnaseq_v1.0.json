@@ -89,7 +89,10 @@
             "skip picard MarkDuplicates: true, false", "optional": true},
     "skip_rseqc": {"description": "skip RSeQC: true, false", "optional": true},
     "skip_bigwig": {"description":
-            "Skip bigWig file creation: true, false",
+            "Skip bigWig file creation. default true: true, false",
+            "optional": true},
+    "skip_stringtie": {"description":
+            "skip stringtie. default true: true, false",
             "optional": true},
     "skip_preseq": {"description":
             "skip preseq. default true: true, false",
